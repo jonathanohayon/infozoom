@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: old;
+    src: url(../src/assets/fonts/slkscr.ttf) format("opentype");
+  }
+
+body{
+    font-family: 'old', 'Courier', monospace;
+    font-smooth: never;
+    -webkit-font-smoothing : none;
+    height: 100%;
+}
+html, body, app-root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    }
+
+.carousel{
+    text-align: center;
+}
+.carousel-indicators{
+    bottom : -150px;
+    transform: scale(0.35);
+}
+ ngb-carousel:focus {
+    outline: none;
+    border: 0;
+ }
+.carousel-indicators li {
+    box-sizing: content-box;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: 30px;
+    height: 3px;
+    top: 50px;
+    margin-top: 50px;
+    margin-right: 25px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: grey;
+    border-top: 0px solid transparent;
+    border-bottom: 26px solid transparent;
+    border-radius: 34px;
+    background-clip: unset;
+}

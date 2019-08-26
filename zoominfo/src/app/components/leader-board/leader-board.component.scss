@@ -1,0 +1,36 @@
+.leaderboardContainer{
+    height: 100%;
+    background-color: #4d4b4b;
+    color: white;
+    text-align: center;
+}
+.leaderboardTitle{
+    font-size: 60px;
+    padding: 80px;
+}
+.leaderBoardMain{
+    margin: auto;
+}
+table{
+    margin: auto;
+    td{
+        width:300px;
+    }
+}
+.yellowText{
+    color: yellow;
+}
+.buttonContainer{
+    position: absolute;
+    margin: 20px;
+    .button{
+        color: white;
+        background-color: #4d4b4b;
+        width: 150px;
+        height: 50px;
+        border: solid;
+        border-color: white;
+        border-radius: 20px;
+        margin: 20px;
+    }
+}   

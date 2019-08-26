@@ -1,0 +1,7 @@
+<div class="container">
+    <div class='button' *ngFor="let item of model.choiceListArray" (click)="updateStatus(item)" 
+    [ngClass]="{'selected': item.isSelected, 'goodChoice' : item.isGoodChoice===true && answerSelected, wrongChoice: item.isGoodChoice===false && answerSelected}">
+    <img class="img" [ngClass]="{'showImageSuccess' : item.isGoodChoice===true && answerSelected}" alt="ZoomInfo Logo" src="../assets/success.png">
+    <img class="img" [ngClass]="{'showImageFailure' : item.isGoodChoice===false && answerSelected}" alt="ZoomInfo Logo" src="../assets/failed.png">
+    <span class="title" [innerHTML]="item.title"></span></div>
+</div>

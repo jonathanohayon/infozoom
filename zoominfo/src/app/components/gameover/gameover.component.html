@@ -1,0 +1,19 @@
+<div class="gameoverContainer">
+    <div class="gameoverTitle">
+        GAME OVER
+    </div>
+    AMA<div *ngIf="isSuccess" class="amazingTitle">
+            AMAZING!!
+        </div>
+    <div class="scoreContainer">
+        <div class="scoreTitle">You answered correctly on: </div>
+        <div class="score">{{score}} OUT OF {{questionsNumber}} QUESTIONS</div>
+    </div>
+    <div class="saveNameContainer">
+        <div class="nameTitle">Enter Your Name</div>
+        <div>
+                <input class="nameInput" #name type="text" placeholder="Enter your name">
+                <button class="nameButton" [routerLink]="['/leader-board']" (click)=saveResult(name.value)>Save</button>
+       </div>
+    </div>
+</div>

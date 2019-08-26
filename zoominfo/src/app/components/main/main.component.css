@@ -1,0 +1,22 @@
+.footer{
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}
+.logofooter{
+    position: relative;
+    top: 75px;
+}
+.buttonContainer{
+    margin: 20px;
+}   
+.buttonMainScreen{
+    color: white;
+    background-color: #4d4b4b;
+    width: 150px;
+    height: 50px;
+    border: solid;
+    border-color: white;
+    border-radius: 20px;
+    margin: 20px;
+}

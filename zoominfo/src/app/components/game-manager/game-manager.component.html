@@ -1,0 +1,25 @@
+<app-header-game [lifeNumber]="lifeNumber" [currentPoints]="point$ | async" [currentQuestionNumber]="currentQuestionNumber" [questionsNumber]="dataList?.length"></app-header-game> 
+<div class="carouselContainer">
+  <countdown class="countdown" #countdown [config]="{leftTime: 20}" (finished)="countDownFinished(e)">Time: $!s! SECONDES</countdown>
+    <ngb-carousel  *ngIf="dataList" #carousel interval="false" [showNavigationArrows]="false" [wrap]="true" 
+    [pauseOnHover]="false" (slide)="onSlide($event)">    
+      <ng-template ngbSlide *ngFor="let data of dataList; index as i">
+        <span class="questionTitle">
+          <span class="Q">Q {{i + 1}} :</span> <span [innerHTML]="data.question"></span>
+        </span>        
+        <question-screen class="question-screen" [model]="data" [answerSelected]="okSelected" (answered)="answerClicked($event)"></question-screen> 
+      </ng-template>
+  </ngb-carousel>
+  <div class="actionInfoContainer">
+    <div *ngIf="!infoText" class="buttonsContainer">
+      <button [disabled]="!isSelected" class="buttonOk" type="button" (click)="clickOK()">OK</button>
+      <button class="buttonSkip" type="button" (click)="carousel.next()">SKIP</button>
+  </div>
+  <h4 *ngIf="infoText">{{infoText}}</h4>
+  </div>  
+</div>
+<footer class=footer>
+    <img class=logofooter alt="ZoomInfo Logo" src="../assets/logozoominfo.png">
+    <img alt="ZoomInfo Logo" src="../assets/footer.png">
+  </footer>
+<app-gameover *ngIf="currentQuestionNumber==dataList?.length || lifeNumber==0" [score]="point$ | async" [questionsNumber]="dataList?.length" [isSuccess]="currentPoints==dataList?.length"></app-gameover>

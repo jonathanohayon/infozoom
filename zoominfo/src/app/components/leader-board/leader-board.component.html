@@ -1,0 +1,20 @@
+<div class="leaderboardContainer">
+    <div class="buttonContainer">
+        <a routerLink="/start-game" routerLinkActive="active">
+            <button type="button" class="button">Start
+                Game</button></a>
+                <a routerLink="/" routerLinkActive="active">
+                    <button type="button" class="button">Home</button></a>
+    </div>
+    <div class="leaderboardTitle">
+        Leader Board
+    </div>
+    <div class="leaderBoardMain">
+        <table>
+            <tr *ngFor="let item of results; let i = index" [ngClass]="{'yellowText': i<3}">
+                <td align="left">{{i}}. {{ item.name }}</td>
+                <td align="right">{{ item.score }}</td>
+            </tr>
+        </table>
+    </div>
+</div>

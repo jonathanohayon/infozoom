@@ -89,7 +89,9 @@ export class GameManagerComponent implements OnInit {
   }
 
   countDownFinished(e) {
-    this.carousel.next();
+    if (this.currentQuestionNumber < this.dataList.length) {
+      this.carousel.next();
+    }
   }
   onSlide(slideData) {
     console.log('SLIDE:', slideData);

@@ -22,4 +22,4 @@
     <img class=logofooter alt="ZoomInfo Logo" src="../assets/logozoominfo.png">
     <img alt="ZoomInfo Logo" src="../assets/footer.png">
   </footer>
-<app-gameover *ngIf="currentQuestionNumber==dataList?.length || lifeNumber==0" [score]="point$ | async" [questionsNumber]="dataList?.length" [isSuccess]="currentPoints==dataList?.length"></app-gameover>
+<app-gameover *ngIf="currentQuestionNumber==dataList?.length || lifeNumber==0" [score]="point$ | async" [questionsNumber]="dataList?.length" [isSuccess]="currentPoints==dataList?.length*100"></app-gameover>

@@ -11,7 +11,6 @@ module.exports = function (app) {
             const response = await fetch(url);
             const json = await response.json();
             questions = json.results;
-            //console.log(json);
         } catch (error) {
             console.log(error);
         }
@@ -20,28 +19,27 @@ module.exports = function (app) {
 
     app.post('/user', function (req, res) {
         var newUser = new User(req.body);
-
         res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
-        newUser.save(function(err){
-            if(err){
-                res.json({info: 'error during user creation'})
+        newUser.save(function (err) {
+            if (err) {
+                res.json({ info: 'error during user creation' })
             }
-            res.json({info: 'user created'})
+            res.json({ info: 'user created' })
         });
     })
     app.get('/user', function (req, res) {
         res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
-        User.find(function(err, users){
-            if(err){
-                res.json({info: 'error during users get'})
+        User.find(function (err, users) {
+            if (err) {
+                res.json({ info: 'error during users get' })
             }
-            res.json({info: 'users found', data: users});
+            res.json({ info: 'users found', data: users });
         });
     })
 
     app.get('/questions', function (req, res) {
         res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
-        res.send(questions);             
+        res.send(questions);
     })
 
 

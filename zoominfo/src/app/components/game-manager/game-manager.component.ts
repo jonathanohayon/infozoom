@@ -60,7 +60,7 @@ export class GameManagerComponent implements OnInit {
     this.store.dispatch(userActions.incrementPoint());
   }
   resetPoint() {
-    this.store.dispatch(userActions.resetPoint);
+    this.store.dispatch(userActions.resetPoint());
   }
   decrementLife() {
     this.store.dispatch(userActions.decrementLife());

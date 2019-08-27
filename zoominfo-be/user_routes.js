@@ -17,7 +17,7 @@ module.exports = function (app) {
     };
     getQuestions(url);
 
-    app.post('/user', function (req, res) {
+    app.put('/user', function (req, res) {
         var newUser = new User(req.body);
         res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
         newUser.save(function (err) {

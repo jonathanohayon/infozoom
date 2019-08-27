@@ -40,7 +40,7 @@ point$;
           name: userName,
           score: value
         };
-        this.http.post(`${this.url}/user`, body, httpOptions).subscribe(value => console.log(value));
+        this.http.put(`${this.url}/user`, body, httpOptions).subscribe(value => console.log(value));
       }
     );
   }

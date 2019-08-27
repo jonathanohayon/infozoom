@@ -111,7 +111,8 @@ export class GameManagerComponent implements OnInit {
   ngOnDestroy() {
     this.resetAll();
     this.currentQuestionNumber = 0;
-    this.lifeNumber = 3;
+    this.resetPoint();
+    this.resetLife();
   }
 }
 
